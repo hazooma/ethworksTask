@@ -1,6 +1,7 @@
 Welcome to my solution to Ethworks task by me Hazem !
 
-
+# Download 
+`git clone https://github.com/hazooma/ethworksTask.git`
 
 # Getting started
 Before you start you should have a recent version of `npm` and `node`
