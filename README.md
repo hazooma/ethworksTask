@@ -24,9 +24,9 @@ npm test
 To run your query on the server , you should make **post** requests to `http://localhost:26062/expression/add`
 
 **Input/Output**
-1. Input : The body of the request is a json in the below format 
-  coefficient : Is Required 
-  exponent : Is Not Required 
+1. Input : The body of the request is a json in the below format .
+- coefficient : Is Required 
+- exponent : Is Not Required 
 Example
 ```
 {
