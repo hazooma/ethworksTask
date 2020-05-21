@@ -5,27 +5,29 @@ exports.formatExpression = exports.add = void 0;
 exports.add = (A, B, sort) => {
     let map = new Map();
     const ATerms = A.terms;
-    for (const term of ATerms) {
-        const exponent = term.exponent || 0; // not required 
-        const coefficient = term.coefficient; // required field
-        if (map.has(exponent)) {
-            map.set(exponent, (map.get(exponent) || 0) + coefficient); // sum the same exponent 
+    if (ATerms)
+        for (const term of ATerms) {
+            const exponent = term.exponent || 0; // not required 
+            const coefficient = term.coefficient; // required field
+            if (map.has(exponent)) {
+                map.set(exponent, (map.get(exponent) || 0) + coefficient); // sum the same exponent 
+            }
+            else {
+                map.set(exponent, coefficient); // put the exponent 
+            }
         }
-        else {
-            map.set(exponent, coefficient); // put the exponent 
-        }
-    }
     const BTerms = B.terms;
-    for (const term of BTerms) {
-        const exponent = term.exponent || 0; // not required 
-        const coefficient = term.coefficient; // required field
-        if (map.has(exponent)) {
-            map.set(exponent, (map.get(exponent) || 0) + coefficient); // sum the same exponent 
+    if (BTerms)
+        for (const term of BTerms) {
+            const exponent = term.exponent || 0; // not required 
+            const coefficient = term.coefficient; // required field
+            if (map.has(exponent)) {
+                map.set(exponent, (map.get(exponent) || 0) + coefficient); // sum the same exponent 
+            }
+            else {
+                map.set(exponent, coefficient); // put the exponent 
+            }
         }
-        else {
-            map.set(exponent, coefficient); // put the exponent 
-        }
-    }
     const finalTerms = [];
     map.forEach((value, key) => {
         const newTerm = { coefficient: value, exponent: key };
