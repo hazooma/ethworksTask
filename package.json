@@ -10,12 +10,9 @@
   "author": "Hazem Abdelalim",
   "license": "ISC",
   "devDependencies": {
-    "@babel/preset-env": "^7.9.6",
-    "@babel/preset-typescript": "^7.9.0",
     "@types/express": "^4.17.6",
     "@types/mocha": "^7.0.2",
     "@types/node": "^14.0.4",
-    "nodemon": "^2.0.4",
     "supertest": "^4.0.2",
     "ts-node": "^8.10.1",
     "typescript": "^3.9.3"
